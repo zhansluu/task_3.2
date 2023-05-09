@@ -10,7 +10,7 @@ int main()
     cout << "Вариант 3." << endl << "Дана функция f(x)=exp(6*x)" << endl;
 
     size_t m;
-    double a, b;
+    double a, step;
     /*Ввод данных с клавиатуры*/
     cout << "Введите число значений в таблице: ";
     cin >> m;
@@ -22,14 +22,11 @@ int main()
     m--;
     cout << "Введите значение a(нижнюю границу): ";
     cin >> a;
-    cout << endl << "Введите значение b(верхнюю границу): ";
-    cin >> b;
-    if (b < a)
-        swap(a,b);
+    cout << endl << "Введите значение h(шаг): ";
+    cin >> step;
 
     /*Создание таблицы*/
-    double x_table[1000], y_table[1000], step;
-    step = (b-a)/m;
+    double x_table[1000], y_table[1000];
     cout << "Исходная таблица значений функций:" << endl;
     for (size_t i = 0; i < m; i++)
     {
